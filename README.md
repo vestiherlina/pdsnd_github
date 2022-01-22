@@ -4,10 +4,11 @@
 Sunday, January 23 2021 00:01 AM
 
 ### Project Title
-Replace the Project Title
+Vesti's Git Project
 
 ### Description
-Describe what your project is about and what it does
+First project using version control (git and github).
+This project has python file about statistic calculation to understand U.S bikeshare data.
 
 ### Files used
 Include the files used
