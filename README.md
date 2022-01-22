@@ -11,7 +11,7 @@ First project using version control (git and github).
 This project has python file about statistic calculation to understand U.S bikeshare data.
 
 ### Files used
-Include the files used
+bikeshare.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
