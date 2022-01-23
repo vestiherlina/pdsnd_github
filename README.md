@@ -9,6 +9,10 @@ Vesti's Git Project
 ### Description
 First project using version control (git and github).
 This project has python file about statistic calculation to understand U.S bikeshare data.
+U.S bikeshare data based on:
+- Chicago
+- New York City
+- Washington
 
 ### Files used
 bikeshare.py
