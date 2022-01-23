@@ -154,7 +154,7 @@ def time_stats(df):
     common_hour = df['hour'].value_counts().idxmax()
     count_hour = df['hour'].value_counts()[common_hour]
     print('Most common hour:', common_hour)
-    print('count: ', count_hour)
+    print('count of common hour: ', count_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
