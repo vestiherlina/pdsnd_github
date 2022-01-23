@@ -4,7 +4,7 @@
 Sunday, January 23 2021 00:01 AM
 
 ### Project Title
-Vesti's Git Project
+**Vesti's Git Project**
 
 ### Description
 First project using version control (git and github).
@@ -19,4 +19,3 @@ bikeshare.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
