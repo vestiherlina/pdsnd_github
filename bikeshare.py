@@ -23,7 +23,7 @@ def get_filters():
             break
         else:
             print('That\'s not a valid city!!')
-                
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
@@ -51,7 +51,7 @@ def get_filters():
             day = 'all'
             print('No filter time!')
             break
-        #day filter input    
+        #day filter input
         elif time_filter == 'day':
             month = 'all'
             #day input
@@ -65,7 +65,7 @@ def get_filters():
                 except:
                     print('Input day (int) within range 1 to 7!')
             break
-        #both filter input        
+        #both filter input
         else:
             #month input
             while True:
@@ -74,7 +74,7 @@ def get_filters():
                     break
                 else:
                     print('Incorrect month!')
-            #day input    
+            #day input
             while True:
                 try:
                     day = int(input('Which day?Please type your response with integer (e.g., 1=Monday).\n'))
@@ -110,12 +110,12 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday
 
-    # filter by month 
+    # filter by month
     if month != 'all':
-       
+
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -137,13 +137,13 @@ def time_stats(df):
     df['month'] = df['Start Time'].dt.month_name()
     df['day'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
-    
+
     # TO DO: display the most common month
     common_month = df['month'].value_counts().idxmax()
     count_month = df['month'].value_counts()[common_month]
     print('Most common month:', common_month)
-    print('count: ', count_month)    
-                     
+    print('count of common month: ', count_month)    
+
     # TO DO: display the most common day of week
     common_day = df['day'].value_counts().idxmax()
     count_day = df['day'].value_counts()[common_day]
@@ -158,7 +158,7 @@ def time_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 
 
 def station_stats(df):
@@ -192,7 +192,7 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     total_duration = df['Trip Duration'].sum()
-    count_duration = df['Trip Duration'].count() 
+    count_duration = df['Trip Duration'].count()
     print('Total travel time: ', total_duration, 'seconds.')
     print('Count: ', count_duration)
 
@@ -216,13 +216,13 @@ def user_stats(df):
     print('User Type:\n', user_types)
 
     # TO DO: Display counts of gender
-    
+
     if 'Gender' in df:
         gender = df['Gender'].value_counts()
         print('User Gender:\n', gender)
     else:
         print('Gender column has not found!')
-        
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
@@ -235,19 +235,19 @@ def user_stats(df):
     else:
         print('Birth Year column has not found!')
 
-    
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def raw(df):
     while True:
-        viewdata = input('Do you want to see the raw data? Enter "yes" or "no"!\n').lower() 
+        viewdata = input('Do you want to see the raw data? Enter "yes" or "no"!\n').lower()
         if viewdata in ('yes','no'):
             break
         else:
             print('Invalid input!')
-                        
+
     start_loc = 0
     while True:
         if viewdata == "yes":
@@ -256,16 +256,16 @@ def raw(df):
             print(data_slice)
             start_loc += 5
             while True:
-                viewdata = input('Do you want to see the raw data? Enter "yes" or "no"!\n').lower() 
+                viewdata = input('Do you want to see the raw data? Enter "yes" or "no"!\n').lower()
                 if viewdata in ('yes','no'):
                     break
                 else:
                     print('Invalid input!')
         else:
             break
-        
-            
-        
+
+
+
 
 def main():
     while True:
@@ -277,12 +277,12 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         raw(df)
-                
+
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
-        
+
 if __name__ == "__main__":
 	main()
